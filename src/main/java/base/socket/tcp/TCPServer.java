@@ -21,11 +21,11 @@ public class TCPServer {
         Socket socket = serverSocket.accept();
 //3、获取输入流，并读取客户端信息
         InputStream is = socket.getInputStream();
-        InputStreamReader isr =new InputStreamReader(is);
-        BufferedReader br =new BufferedReader(isr);
-        String info =null;
-        while((info=br.readLine())!=null){
-            System.out.println("我是服务器，客户端说："+info);
+        InputStreamReader isr = new InputStreamReader(is);
+        BufferedReader br = new BufferedReader(isr);
+        String info = null;
+        while ((info = br.readLine()) != null) {
+            System.out.println("我是服务器，客户端说：" + info);
         }
         socket.shutdownInput();//关闭输入流
 //4、获取输出流，响应客户端的请求
